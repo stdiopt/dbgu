@@ -37,7 +37,6 @@ func (walk fieldWalker) Fields(prefix []string, a reflect.Value, fn fieldWalkFun
 		count++
 		walk.Var(append(prefix, fname), a.Field(i), fn)
 	}
-	// It is a struct with no exported fields like (time.Time), we print it
 	if count == 0 {
 		fn(prefix, a)
 	}
